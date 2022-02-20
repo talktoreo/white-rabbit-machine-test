@@ -35,17 +35,14 @@ class MainActivity : AppCompatActivity(), EmployeeAdapterListner {
         employeeRecycler.adapter = mEmployeeAdapter
 
         lifecycleScope.launch() {
-//            if (NetworkUtils.isNetworkConnected(this@MainActivity)) {
+            if (NetworkUtils.isNetworkConnected(this@MainActivity)) {
             viewModel.getData().observe(this@MainActivity, Observer {
 //                mEmployeeAdapter.updateList(it)
             })
-//                viewModel.searchData.observe(this@MainActivity, Observer {
-//                    Log.e("responseee", it.size.toString())
-//                    mEmployeeAdapter.updateList(it)
-//                })
-//            } else {
-//                Toast.makeText(this@MainActivity,"Network not available",Toast.LENGTH_LONG).show()
-//            }
+
+            } else {
+                Toast.makeText(this@MainActivity,"Network not available",Toast.LENGTH_LONG).show()
+            }
         }
 
         viewModel.allemployees.observe(this, Observer {
