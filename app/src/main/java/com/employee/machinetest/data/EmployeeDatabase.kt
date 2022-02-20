@@ -22,21 +22,4 @@ abstract class EmployeeDatabase : RoomDatabase() {
         }
     }
 
-//    companion object {
-//
-//        @Volatile
-//        private var INSTANCE: EmployeeDatabase? = null
-//
-//        fun getInstance(context: Context): EmployeeDatabase =
-//            INSTANCE ?: synchronized(this) {
-//                INSTANCE
-//                    ?: buildDatabase(context).also { INSTANCE = it }
-//            }
-//
-//        private fun buildDatabase(context: Context) =
-//            Room.databaseBuilder(context.applicationContext,
-//                EmployeeDatabase::class.java, "employee_database")
-//                .build()
-//    }
-
 }
